@@ -1,6 +1,6 @@
 import express from 'express'
-import { UserDto } from '../dtos/user.dto'
-import usersService from '../services/users.service'
+import { UserDto } from './user.dto'
+import usersService from './users.service'
 
 class UsersMiddleware {
   validateRequiredUserBodyFields(
@@ -47,6 +47,42 @@ class UsersMiddleware {
     } else {
       res.status(400).send({ error: 'Invalid email' })
     }
+  }
+
+  async validateUserExists(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction,
+  ): Promise<void> {
+    const user = await usersService.itemById(req.params.userId)
+    if (user !== undefined) {
+      next()
+    } else {
+      res.status(404).send({ error: `User ${req.params.userId} not found` })
+    }
+  }
+
+  async validatePatchEmail(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction,
+  ): Promise<void> {
+    const reqBody = req.body as UserDto
+    if (reqBody.email.length > 0) {
+      await this.validateSameEmailBelongToSameUser(req, res, next)
+    } else {
+      next()
+    }
+  }
+
+  extractUserId(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction,
+  ): void {
+    const reqBody = req.body as UserDto
+    reqBody.id = req.params.userId
+    next()
   }
 }
 

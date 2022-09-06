@@ -6,7 +6,7 @@ import express from 'express'
 import helmet from 'helmet'
 import { CommonRoutesConfig } from './common/common.routes.config'
 import logger from './common/logging.config'
-import { UsersRoutes } from './routes/users.routes'
+import { UsersRoutes } from './users/users.routes'
 
 dotenv.config()
 

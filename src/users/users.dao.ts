@@ -1,7 +1,7 @@
 import shortid from 'shortid'
 import logger from '../common/logging.config'
-import { UserDto } from '../dtos/user.dto'
 import { timeout } from '../utils/timeout'
+import { UserDto } from './user.dto'
 
 const mapTo = <T, S extends T, K extends keyof T>(
   target: T,

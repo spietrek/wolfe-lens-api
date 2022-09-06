@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/return-await */
-import { UsersDao } from '../daos/users.dao'
-import { UserDto } from '../dtos/user.dto'
 import { ICrud } from '../types/crud.interface'
+import { UserDto } from './user.dto'
+import { UsersDao } from './users.dao'
 
 class UsersService implements ICrud<UserDto> {
   public list: () => Promise<UserDto[]> = async () => {
