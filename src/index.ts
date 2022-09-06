@@ -28,7 +28,7 @@ routes.push(new UsersRoutes(app))
 
 const runningMessage = `Server running at http://localhost:${PORT}`
 app.get('/', (req: express.Request, res: express.Response) => {
-  res.status(200).send(runningMessage)
+  res.status(200).send('Everything is fine')
   logger.info('Everything is fine')
 })
 
