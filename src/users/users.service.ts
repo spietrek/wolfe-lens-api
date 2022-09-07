@@ -1,45 +1,35 @@
 /* eslint-disable @typescript-eslint/return-await */
 import { ICrud } from '../types/crud.interface'
 import { UserDto } from './user.dto'
-import { UsersDao } from './users.dao'
+import UsersDao from './users.dao'
 
 class UsersService implements ICrud<UserDto> {
-  public list: () => Promise<UserDto[]> = async () => {
-    return await UsersDao.prototype.getUsers()
+  async list(): Promise<UserDto[] | never> {
+    return await UsersDao.getUsers()
   }
 
-  public itemById: (id: string) => Promise<UserDto | never> = async (
-    id: string,
-  ) => {
-    return await UsersDao.prototype.getUserById(id)
+  async itemById(id: string): Promise<UserDto | never> {
+    return await UsersDao.getUserById(id)
   }
 
-  public itemByEmail: (email: string) => Promise<UserDto | never> = async (
-    email: string,
-  ) => {
-    return await UsersDao.prototype.getUserByEmail(email)
+  async itemByEmail(email: string): Promise<UserDto | never> {
+    return await UsersDao.getUserByEmail(email)
   }
 
-  public create: (resource: UserDto) => Promise<string | never> = async (
-    user: UserDto,
-  ) => {
-    return await UsersDao.prototype.addUser(user)
+  async create(resource: UserDto): Promise<string | never> {
+    return await UsersDao.addUser(resource)
   }
 
-  public updateById: (id: string, resource: UserDto) => Promise<void | never> =
-    async (id: string, user: UserDto) => {
-      return await UsersDao.prototype.putUserById(id, user)
-    }
+  async updateById(id: string, resource: UserDto): Promise<void | never> {
+    return await UsersDao.putUserById(id, resource)
+  }
 
-  public patchById: (id: string, resource: UserDto) => Promise<void | never> =
-    async (id: string, user: UserDto) => {
-      return await UsersDao.prototype.patchUserById(id, user)
-    }
+  async patchById(id: string, resource: UserDto): Promise<void | never> {
+    return await UsersDao.patchUserById(id, resource)
+  }
 
-  public deleteById: (id: string) => Promise<void | never> = async (
-    id: string,
-  ) => {
-    return await UsersDao.prototype.removeUserById(id)
+  async deleteById(id: string): Promise<void | never> {
+    return await UsersDao.removeUserById(id)
   }
 }
 

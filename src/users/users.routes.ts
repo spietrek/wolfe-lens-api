@@ -14,7 +14,7 @@ export class UsersRoutes extends CommonRoutesConfig {
       .get(UsersController.listUsers.bind(UsersController))
       .post(
         UsersMiddleware.validateRequiredUserBodyFields.bind(UsersMiddleware),
-        UsersMiddleware.validateSameEmailDoesntExist.bind(UsersMiddleware),
+        // UsersMiddleware.validateSameEmailDoesntExist.bind(UsersMiddleware),
         UsersController.createUser.bind(UsersController),
       )
 

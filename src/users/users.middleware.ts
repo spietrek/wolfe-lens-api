@@ -9,16 +9,14 @@ class UsersMiddleware {
     next: express.NextFunction,
   ): void {
     const reqBody = req.body as UserDto
-    if (
-      reqBody !== undefined &&
-      reqBody.email.length > 0 &&
-      reqBody.password.length > 0
-    ) {
+    const email = reqBody?.email ?? ''
+    const password = reqBody?.password ?? ''
+    if (reqBody !== undefined && email.length > 0 && password.length > 0) {
       next()
     } else {
       res
         .status(400)
-        .send({ error: 'Missing required fields email and password' })
+        .send({ error: 'Missing required fields email and/or password' })
     }
   }
 
@@ -28,7 +26,7 @@ class UsersMiddleware {
     next: express.NextFunction,
   ): Promise<void> {
     const reqBody = req.body as UserDto
-    const user = await usersService.itemById(reqBody.email)
+    const user = await usersService.itemByEmail(reqBody.email)
     if (user !== undefined) {
       res.status(400).send({ error: 'User email already exists' })
     }
@@ -68,7 +66,8 @@ class UsersMiddleware {
     next: express.NextFunction,
   ): Promise<void> {
     const reqBody = req.body as UserDto
-    if (reqBody.email.length > 0) {
+    const email = reqBody?.email ?? ''
+    if (reqBody !== undefined && email.length > 0) {
       await this.validateSameEmailBelongToSameUser(req, res, next)
     } else {
       next()

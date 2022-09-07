@@ -32,11 +32,6 @@ app.get('/', (req: express.Request, res: express.Response) => {
   logger.info('Everything is fine')
 })
 
-app.get('/error', (req: express.Request, res: express.Response) => {
-  logger.error('This is an error')
-  throw new Error('This is a test error')
-})
-
 // logger.info('Information message')
 // logger.warn('Warning message')
 // logger.error('Error message')
