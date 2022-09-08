@@ -10,15 +10,16 @@ export class ProductsRoutes extends CommonRoutesConfig {
 
   configureRoutes(): express.Application {
     this.app
-      .route('/products')
+      .route('/api/v1/products')
       .get(ProductsController.getProducts.bind(ProductsController))
 
     this.app.param(
       'productId',
       ProductsMiddleware.extractProductId.bind(ProductsMiddleware),
     )
+
     this.app
-      .route('/products/:productId')
+      .route('/api/v1/products/:productId')
       .all(ProductsMiddleware.validateProductExists.bind(ProductsMiddleware))
       .get(ProductsController.getProductById.bind(ProductsController))
 

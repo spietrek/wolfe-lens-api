@@ -6,7 +6,8 @@ import express from 'express'
 import helmet from 'helmet'
 import { CommonRoutesConfig } from './common/common.routes.config'
 import logger from './common/logging.config'
-import { ProductsRoutes } from './routes/product.routes'
+import { CompanysRoutes } from './routes/companys.routes'
+import { ProductsRoutes } from './routes/products.routes'
 import { UsersRoutes } from './users/users.routes'
 
 dotenv.config()
@@ -25,18 +26,21 @@ app.use(bodyparser.json())
 app.use(express.json())
 app.use(cors())
 
-routes.push(new UsersRoutes(app))
+routes.push(new CompanysRoutes(app))
 routes.push(new ProductsRoutes(app))
+routes.push(new UsersRoutes(app))
 
-const runningMessage = `Server running at address http://localhost:${PORT}`
-
-// logger.info('Information message')
-// logger.warn('Warning message')
-// logger.error('Error message')
-
-app.get('/', (req: express.Request, res: express.Response) => {
+app.get('/', (_req: express.Request, res: express.Response) => {
   res.status(200).send({ status: 'API is running on /api' })
 })
+
+app.get('*', (_req: express.Request, res: express.Response) => {
+  const message = `Route ${_req.originalUrl} not found.`
+  logger.error({ error: message })
+  res.status(404).send({ error: message })
+})
+
+const runningMessage = `Server running at address http://localhost:${PORT}`
 
 server.listen(PORT, () => {
   logger.info(runningMessage)

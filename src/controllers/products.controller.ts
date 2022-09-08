@@ -6,8 +6,8 @@ class ProductsController {
     _req: express.Request,
     res: express.Response,
   ): Promise<void> {
-    const users = await ProductsService.getProducts()
-    res.status(200).send(users)
+    const products = await ProductsService.getProducts()
+    res.status(200).send(products)
   }
 
   async getProductById(
