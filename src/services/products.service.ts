@@ -9,6 +9,7 @@ class ProductsService {
         sizes: true,
       },
     })
+
     return products
   }
 
@@ -22,6 +23,7 @@ class ProductsService {
         sizes: true,
       },
     })
+
     return product ?? null
   }
 }

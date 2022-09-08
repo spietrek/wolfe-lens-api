@@ -8,6 +8,7 @@ class CompanysService {
         active: true,
       },
     })
+
     return company ?? null
   }
 }

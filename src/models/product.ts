@@ -4,7 +4,7 @@ export interface Product {
   subtitle: string
   price: number
   recurrence: number
-  autoRenewPrice?: number
+  discount: number
   productTitle: string
   productDescription: string
   productImage: string
