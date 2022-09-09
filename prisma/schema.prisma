@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -25,22 +25,36 @@ model Company {
 }
 
 model Product {
-  id                 Int      @id @default(autoincrement())
-  name               String
-  subtitle           String
-  price              Float
-  recurrence         Int
-  discount           Float
-  productTitle       String
-  productDescription String
-  productImage       String
-  heroImage1         String
-  heroImage2         String
-  heroImage3         String
-  colors             Color[]
-  sizes              Size[]
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
+  id                  Int      @id @default(autoincrement())
+  name                String
+  subtitle            String
+  price               Float
+  recurrence          Int
+  discount            Float
+  productTitle        String
+  productDescription  String
+  productImage        String
+  productImageAltText String
+  heroImage1          String
+  heroImage1AltText   String
+  heroImage2          String
+  heroImage2AltText   String
+  heroImage3          String
+  heroImage3AltText   String
+  colors              Color[]
+  sizes               Size[]
+  category            Category @relation(fields: [categoryId], references: [id])
+  categoryId          Int
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  category  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  products  Product[]
 }
 
 model Color {
@@ -69,7 +83,7 @@ model Community {
   updatedAt DateTime @updatedAt
 }
 
-model HomeHero {
+model Hero {
   id        Int      @id @default(autoincrement())
   active    Boolean  @default(false)
   title     String
@@ -80,4 +94,39 @@ model HomeHero {
   link      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Header {
+  id        Int      @id @default(autoincrement())
+  active    Boolean  @default(false)
+  sortOrder Int
+  title     String
+  subtitle  String
+  image     String
+  altText   String
+  label     String
+  link      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Footer {
+  id        Int      @id @default(autoincrement())
+  active    Boolean  @default(false)
+  sortOrder Int
+  title     String
+  links     Link[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Link {
+  id        Int      @id @default(autoincrement())
+  active    Boolean  @default(false)
+  sortOrder Int
+  label     String
+  link      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Footer    Footer[]
 }

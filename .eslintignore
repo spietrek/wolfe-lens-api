@@ -13,3 +13,6 @@ vite.config.js
 
 babel.config.js
 jest-setup.ts
+
+prisma/data.ts
+prisma/seed.ts

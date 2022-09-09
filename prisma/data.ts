@@ -1,0 +1,245 @@
+const companys = [
+  {
+    active: true,
+    name: 'wolfe',
+    address: '456 Jefferson Avenue',
+    city: 'Louisville',
+    state: 'KY',
+    zip: '40202',
+    phone: '888-555-0199',
+    email: 'info@wolfe-bikes.com',
+  },
+]
+
+const colors = [
+  {
+    value: 'Black',
+    hex: '#000000',
+  },
+  {
+    value: 'Red',
+    hex: '#ff0000',
+  },
+  {
+    value: 'Yellow',
+    hex: '#f9db24',
+  },
+  {
+    value: 'Gray',
+    hex: '#2E312E',
+  },
+]
+
+const sizes = [
+  {
+    value: 'S',
+  },
+  {
+    value: 'M',
+  },
+  {
+    value: 'L',
+  },
+  {
+    value: 'XL',
+  },
+  {
+    value: 'XXL',
+  },
+]
+
+const products = [
+  {
+    name: 'Slayer',
+    subtitle: '29 Carbon - 140mm',
+    price: 7299,
+    recurrence: 0,
+    discount: 0,
+    productTitle: 'Climb. Descend. Smile. Repeat.',
+    productDescription:
+      'The quiet Quiver Killer strikes again. The Slayer is our 140mm 29” big-wheeled trail bike featuring a steeper 77° seat angle and the best attributes from both its Following and Wreckoning brothers. Still, the Slayer stands on its own, with an increased reach that benefits both climbing and descending, a fierce DH capability, an Enduro heart, and diabolical cornering powers. Quiet, stiff, fast and poppy-as-hell, the Offering sacrifices nothing but gives you God-like powers. All hail, the Dark Lord of singletrack.',
+    productImage: '/assets/images/mb-right-top.webp',
+    productImageAltText: 'Slayer',
+    heroImage1: '/assets/images/mb-left-top.webp',
+    heroImage1AltText: 'Slayer',
+    heroImage2: '/assets/images/mb-left-bottom.webp',
+    heroImage2AltText: 'Slayer',
+    heroImage3: '/assets/images/mb-right-bottom.webp',
+    heroImage3AltText: 'Slayer',
+    colors: {
+      create: [
+        { value: 'Black', hex: '#000000' },
+        { value: 'Red', hex: '#ff0000' },
+        { value: 'Yellow', hex: '#f9db24' },
+      ],
+    },
+    sizes: {
+      create: [
+        { value: 'S' },
+        { value: 'M' },
+        { value: 'L' },
+        { value: 'XL' },
+        { value: 'XXL' },
+      ],
+    },
+  },
+  {
+    name: 'Megadeath',
+    subtitle: '29 Carbon - 140mm',
+    price: 8299,
+    recurrence: 0,
+    discount: 0,
+    productTitle: 'Climb. Descend. Smile. Repeat.',
+    productDescription:
+      'The quiet Quiver Killer strikes again. The Megadeath is our 140mm 29” big-wheeled trail bike featuring a steeper 77° seat angle and the best attributes from both its Following and Wreckoning brothers. Still, the Slayer stands on its own, with an increased reach that benefits both climbing and descending, a fierce DH capability, an Enduro heart, and diabolical cornering powers. Quiet, stiff, fast and poppy-as-hell, the Offering sacrifices nothing but gives you God-like powers. All hail, the Dark Lord of singletrack.',
+    productImage: '/assets/images/mb-right-top.webp',
+    productImageAltText: 'Megadeath',
+    heroImage1: '/assets/images/mb-left-top.webp',
+    heroImage1AltText: 'Megadeath',
+    heroImage2: '/assets/images/mb-left-bottom.webp',
+    heroImage2AltText: 'Megadeath',
+    heroImage3: '/assets/images/mb-right-bottom.webp',
+    heroImage3AltText: 'Megadeath',
+    colors: {
+      create: [
+        { value: 'Black', hex: '#000000' },
+        { value: 'Gray', hex: '#2E312E' },
+      ],
+    },
+    sizes: {
+      create: [
+        { value: 'S' },
+        { value: 'M' },
+        { value: 'L' },
+        { value: 'XL' },
+        { value: 'XXL' },
+      ],
+    },
+  },
+  {
+    name: 'Deathbringer',
+    subtitle: '29 Carbon - 140mm',
+    price: 9999,
+    recurrence: 0,
+    discount: 0,
+    productTitle: 'Climb. Descend. Smile. Repeat.',
+    productDescription:
+      'The quiet Quiver Killer strikes again. The Deathbringer is our 140mm 29” big-wheeled trail bike featuring a steeper 77° seat angle and the best attributes from both its Following and Wreckoning brothers. Still, the Slayer stands on its own, with an increased reach that benefits both climbing and descending, a fierce DH capability, an Enduro heart, and diabolical cornering powers. Quiet, stiff, fast and poppy-as-hell, the Offering sacrifices nothing but gives you God-like powers. All hail, the Dark Lord of singletrack.',
+    productImage: '/assets/images/mb-right-top.webp',
+    productImageAltText: 'Deathbringer',
+    heroImage1: '/assets/images/mb-left-top.webp',
+    heroImage1AltText: 'Deathbringer',
+    heroImage2: '/assets/images/mb-left-bottom.webp',
+    heroImage2AltText: 'Deathbringer',
+    heroImage3: '/assets/images/mb-right-bottom.webp',
+    heroImage3AltText: 'Deathbringer',
+    colors: {
+      create: [
+        { value: 'Black', hex: '#000000' },
+        { value: 'Gray', hex: '#2E312E' },
+      ],
+    },
+    sizes: {
+      create: [
+        { value: 'S' },
+        { value: 'M' },
+        { value: 'L' },
+        { value: 'XL' },
+        { value: 'XXL' },
+      ],
+    },
+  },
+  {
+    name: 'Rockstar',
+    subtitle: '29 Carbon - 140mm',
+    price: 5999,
+    recurrence: 0,
+    discount: 0,
+    productTitle: 'Climb. Descend. Smile. Repeat.',
+    productDescription:
+      'The quiet Quiver Killer strikes again. The Rockstar is our 140mm 29” big-wheeled trail bike featuring a steeper 77° seat angle and the best attributes from both its Following and Wreckoning brothers. Still, the Slayer stands on its own, with an increased reach that benefits both climbing and descending, a fierce DH capability, an Enduro heart, and diabolical cornering powers. Quiet, stiff, fast and poppy-as-hell, the Offering sacrifices nothing but gives you God-like powers. All hail, the Dark Lord of singletrack.',
+    productImage: '/assets/images/mb-right-top.webp',
+    productImageAltText: 'Rockstar',
+    heroImage1: '/assets/images/mb-left-top.webp',
+    heroImage1AltText: 'Rockstar',
+    heroImage2: '/assets/images/mb-left-bottom.webp',
+    heroImage2AltText: 'Rockstar',
+    heroImage3: '/assets/images/mb-right-bottom.webp',
+    heroImage3AltText: 'Rockstar',
+    colors: {
+      create: [
+        { value: 'Black', hex: '#000000' },
+        { value: 'Gray', hex: '#2E312E' },
+      ],
+    },
+    sizes: {
+      create: [
+        { value: 'S' },
+        { value: 'M' },
+        { value: 'L' },
+        { value: 'XL' },
+        { value: 'XXL' },
+      ],
+    },
+  },
+  {
+    name: 'Offering',
+    subtitle: '29 Carbon - 140mm',
+    price: 4999,
+    recurrence: 0,
+    discount: 0,
+    productTitle: 'Climb. Descend. Smile. Repeat.',
+    productDescription:
+      'The quiet Quiver Killer strikes again. The Offering is our 140mm 29” big-wheeled trail bike featuring a steeper 77° seat angle and the best attributes from both its Following and Wreckoning brothers. Still, the Slayer stands on its own, with an increased reach that benefits both climbing and descending, a fierce DH capability, an Enduro heart, and diabolical cornering powers. Quiet, stiff, fast and poppy-as-hell, the Offering sacrifices nothing but gives you God-like powers. All hail, the Dark Lord of singletrack.',
+    productImage: '/assets/images/mb-right-top.webp',
+    productImageAltText: 'Offering',
+    heroImage1: '/assets/images/mb-left-top.webp',
+    heroImage1AltText: 'Offering',
+    heroImage2: '/assets/images/mb-left-bottom.webp',
+    heroImage2AltText: 'Offering',
+    heroImage3: '/assets/images/mb-right-bottom.webp',
+    heroImage3AltText: 'Offering',
+    colors: {
+      create: [
+        { value: 'Black', hex: '#000000' },
+        { value: 'Gray', hex: '#2E312E' },
+      ],
+    },
+    sizes: {
+      create: [
+        { value: 'S' },
+        { value: 'M' },
+        { value: 'L' },
+        { value: 'XL' },
+        { value: 'XXL' },
+      ],
+    },
+  },
+  {
+    name: "Stan's No Tubes",
+    subtitle: '',
+    price: 34,
+    recurrence: 6,
+    discount: 10,
+    productTitle: "Stan's Notubes Tire Sealant",
+    productDescription:
+      "If tubeless is the new black, Stan's NoTubes Tire Sealant is a classic secret-agent tuxedo. Just pour some of this milky goo into your tubeless-compatible tires, pop them onto the bead, and spin 'em around to get an even coating that will protect you from leaks and punctures all the way up to 1/4in. It makes it safer and easier to run tubeless tires at low pressure, and can work with wheels designed to be run tubeless or wheels that have been converted to accommodate a tubeless setup. Sharp rocks, thorns, and broken glass won't ruin your ride anymore, and the ability to ride at lower pressures will increase grip when you're in slick terrain.",
+    productImage: '/assets/images/stans-right-top.webp',
+    productImageAltText: "Stan's No Tubes",
+    heroImage1: '/assets/images/stans-left-top.webp',
+    heroImage1AltText: "Stan's No Tubes",
+    heroImage2: '/assets/images/stans-left-bottom.webp',
+    heroImage2AltText: "Stan's No Tubes",
+    heroImage3: '/assets/images/stans-right-bottom.webp',
+    heroImage3AltText: "Stan's No Tubes",
+    colors: [],
+    sizes: [],
+  },
+]
+
+module.exports = {
+  companys,
+  colors,
+  sizes,
+  products,
+}
