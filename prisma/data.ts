@@ -48,8 +48,22 @@ const sizes = [
   },
 ]
 
+const categories = [
+  {
+    value: 'Bikes',
+  },
+  {
+    value: 'Gear',
+  },
+  {
+    value: 'Parts',
+  },
+]
+
 const products = [
   {
+    active: true,
+    featured: true,
     name: 'Slayer',
     subtitle: '29 Carbon - 140mm',
     price: 7299,
@@ -82,8 +96,11 @@ const products = [
         { value: 'XXL' },
       ],
     },
+    category: { create: { value: 'Bikes' } },
   },
   {
+    active: true,
+    featured: true,
     name: 'Megadeath',
     subtitle: '29 Carbon - 140mm',
     price: 8299,
@@ -115,8 +132,11 @@ const products = [
         { value: 'XXL' },
       ],
     },
+    category: { create: { value: 'Bikes' } },
   },
   {
+    active: true,
+    featured: true,
     name: 'Deathbringer',
     subtitle: '29 Carbon - 140mm',
     price: 9999,
@@ -148,8 +168,11 @@ const products = [
         { value: 'XXL' },
       ],
     },
+    category: { create: { value: 'Bikes' } },
   },
   {
+    active: true,
+    featured: true,
     name: 'Rockstar',
     subtitle: '29 Carbon - 140mm',
     price: 5999,
@@ -181,8 +204,10 @@ const products = [
         { value: 'XXL' },
       ],
     },
+    category: { create: { value: 'Bikes' } },
   },
   {
+    active: true,
     name: 'Offering',
     subtitle: '29 Carbon - 140mm',
     price: 4999,
@@ -214,8 +239,10 @@ const products = [
         { value: 'XXL' },
       ],
     },
+    category: { create: { value: 'Bikes' } },
   },
   {
+    active: true,
     name: "Stan's No Tubes",
     subtitle: '',
     price: 34,
@@ -232,8 +259,161 @@ const products = [
     heroImage2AltText: "Stan's No Tubes",
     heroImage3: '/assets/images/stans-right-bottom.webp',
     heroImage3AltText: "Stan's No Tubes",
-    colors: [],
-    sizes: [],
+    category: { create: { value: 'Parts' } },
+  },
+]
+
+const communityImages = [
+  {
+    sortOrder: 1,
+    image: '/assets/images/community1.webp',
+    altText: 'Community 1',
+  },
+  {
+    sortOrder: 2,
+    image: '/assets/images/community4.webp',
+    altText: 'Community 4',
+  },
+  {
+    sortOrder: 3,
+    image: '/assets/images/community7.webp',
+    altText: 'Community 7',
+  },
+  {
+    sortOrder: 4,
+    image: '/assets/images/community2.webp',
+    altText: 'Community 2',
+  },
+  {
+    sortOrder: 5,
+    image: '/assets/images/community5.webp',
+    altText: 'Community 5',
+  },
+  {
+    sortOrder: 6,
+    image: '/assets/images/community8.webp',
+    altText: 'Community 8',
+  },
+  {
+    sortOrder: 7,
+    image: '/assets/images/community3.webp',
+    altText: 'Community 3',
+  },
+  {
+    sortOrder: 8,
+    image: '/assets/images/community6.webp',
+    altText: 'Community 6',
+  },
+  {
+    sortOrder: 9,
+    image: '/assets/images/community9.webp',
+    altText: 'Community 9',
+  },
+]
+
+const headerLinks = [
+  {
+    active: true,
+    sortOrder: 1,
+    title: 'Bikes',
+    subtitle: '',
+    image: '/assets/images/bikes.webp',
+    altText: 'Bikes',
+    label: 'Show Now',
+    link: '/bikes',
+  },
+  {
+    active: true,
+    sortOrder: 2,
+    title: 'Gear',
+    subtitle: '',
+    image: '/assets/images/gear.webp',
+    altText: 'Gear',
+    label: 'Show Now',
+    link: '/gear',
+  },
+  {
+    active: true,
+    sortOrder: 3,
+    title: 'Parts',
+    subtitle: '',
+    image: '/assets/images/parts.webp',
+    altText: 'Parts',
+    label: 'Show Now',
+    link: '/parts',
+  },
+]
+
+const heroItems = [
+  {
+    active: true,
+    title: 'Summer Sale',
+    subtitle: '10% Off all Gear',
+    image: '/assets/images/hero.webp',
+    altText: 'Bike in woods',
+    label: 'Start Shopping',
+    link: '/gear',
+  },
+]
+
+const footerItems = [
+  {
+    active: true,
+    sortOrder: 1,
+    title: 'Shop',
+    links: {
+      create: [
+        { sortOrder: 1, label: 'Bikes', link: '/' },
+        { sortOrder: 2, label: 'Gear', link: '/' },
+        { sortOrder: 3, label: 'Parts', link: '/' },
+      ],
+    },
+  },
+  {
+    active: true,
+    sortOrder: 2,
+    title: 'Orders & Returns',
+    links: {
+      create: [
+        { sortOrder: 1, label: 'Full Bike Assembly', link: '/' },
+        { sortOrder: 2, label: 'Shipping & Delivery', link: '/' },
+        { sortOrder: 3, label: 'Return Policy', link: '/' },
+        { sortOrder: 4, label: 'Affirm Financing', link: '/' },
+      ],
+    },
+  },
+  {
+    active: true,
+    sortOrder: 3,
+    title: 'Company',
+    links: {
+      create: [
+        { sortOrder: 1, label: 'Click & Mortar', link: '/' },
+        { sortOrder: 2, label: 'Terms & Conditions', link: '/' },
+        { sortOrder: 3, label: 'Privacy Policy', link: '/' },
+        { sortOrder: 4, label: 'Dealers', link: '/' },
+        { sortOrder: 5, label: 'Demo Tour', link: '/' },
+      ],
+    },
+  },
+  {
+    active: true,
+    sortOrder: 4,
+    title: 'Support',
+    links: {
+      create: [
+        { sortOrder: 1, label: 'Register Your Bike', link: '/' },
+        { sortOrder: 2, label: 'Warranty Policy', link: '/' },
+        { sortOrder: 3, label: 'Get Support', link: '/' },
+        { sortOrder: 4, label: 'Tech Details', link: '/' },
+        {
+          sortOrder: 5,
+          label: 'Decal Install Instructions',
+          link: '/',
+        },
+        { sortOrder: 6, label: 'Bike Archive', link: '/' },
+      ],
+    },
   },
 ]
 
@@ -241,5 +421,10 @@ module.exports = {
   companys,
   colors,
   sizes,
+  categories,
   products,
+  communityImages,
+  headerLinks,
+  heroItems,
+  footerItems,
 }

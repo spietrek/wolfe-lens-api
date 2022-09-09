@@ -7,6 +7,7 @@ class ProductsService {
       include: {
         colors: true,
         sizes: true,
+        category: true,
       },
     })
 

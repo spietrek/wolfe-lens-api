@@ -3,7 +3,7 @@ import { Hero } from '../models/hero'
 
 class HomeHeroService {
   async getActiveHero(): Promise<Hero | null | never> {
-    const [hero] = await prisma.homeHero.findMany({
+    const [hero] = await prisma.hero.findMany({
       where: {
         active: true,
       },
