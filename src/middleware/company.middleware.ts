@@ -1,13 +1,13 @@
 import express from 'express'
-import CompanysService from '../services/companys.service'
+import CompanyService from '../services/company.service'
 
-class ProductsMiddleware {
+class CompanyMiddleware {
   async validateActiveCompanyExists(
     _req: express.Request,
     res: express.Response,
     next: express.NextFunction,
   ): Promise<void> {
-    const company = await CompanysService.getActiveCompany()
+    const company = await CompanyService.getActiveCompany()
     if (company !== null) {
       next()
     } else {
@@ -16,4 +16,4 @@ class ProductsMiddleware {
   }
 }
 
-export default new ProductsMiddleware()
+export default new CompanyMiddleware()

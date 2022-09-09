@@ -6,7 +6,9 @@ import express from 'express'
 import helmet from 'helmet'
 import { CommonRoutesConfig } from './common/common.routes.config'
 import logger from './common/logging.config'
-import { CompanysRoutes } from './routes/companys.routes'
+import { CommunityRoutes } from './routes/community.routes'
+import { CompanyRoutes } from './routes/company.routes'
+import { HomeHeroRoutes } from './routes/homeHero.routes'
 import { ProductsRoutes } from './routes/products.routes'
 import { UsersRoutes } from './users/users.routes'
 
@@ -26,7 +28,9 @@ app.use(bodyparser.json())
 app.use(express.json())
 app.use(cors())
 
-routes.push(new CompanysRoutes(app))
+routes.push(new CommunityRoutes(app))
+routes.push(new CompanyRoutes(app))
+routes.push(new HomeHeroRoutes(app))
 routes.push(new ProductsRoutes(app))
 routes.push(new UsersRoutes(app))
 
