@@ -154,6 +154,7 @@
       }
     ],
 
+    "arrow-body-style": ["error", "as-needed"],
     "comma-dangle": [
       "error",
       {
@@ -183,9 +184,16 @@
           "parent",
           "sibling",
           "index",
-          "unknown",
           "object",
-          "type"
+          "type",
+          "unknown"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**/**",
+            "group": "parent",
+            "position": "before"
+          }
         ],
         "newlines-between": "never",
         "alphabetize": {
